@@ -21,6 +21,13 @@ export default defineConfig({
     }),
   ],
   define: { 'process.env': {} },
+  css: {
+    preprocessorOptions: {
+        scss: {
+            additionalData: `@import "@/styles/app.scss";`,
+        },
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
