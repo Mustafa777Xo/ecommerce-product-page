@@ -1,11 +1,14 @@
 <template>
   <div class="d-flex">
-    <v-col class="pa-0">
+    <v-col cols="2" class="pa-0">
       <p class="logo">sneakers</p>
     </v-col>
-    <v-col v-for="navLink in navLinks">
-      <NavLink :title="navLink" :is-selected="false" />
-    </v-col>
+    <div class="d-flex py-1">
+      <v-col v-for="navLink in navLinks">
+        <NavLink :title="navLink" :is-selected="false" />
+      </v-col>
+    </div>
+    <v-spacer></v-spacer>
     <div class="d-flex">
       <v-col>
         <Cart />
