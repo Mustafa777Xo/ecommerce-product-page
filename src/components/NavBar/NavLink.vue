@@ -16,7 +16,7 @@ const props = defineProps<{
 .main-body {
   text-decoration: none;
   color: $Dark-grayish-blue;
-  padding-bottom: 2rem;
+  padding-bottom: 1.8rem;
   margin-top: 50%;
 }
 .main-body:hover {

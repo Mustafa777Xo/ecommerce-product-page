@@ -1,11 +1,39 @@
 <template>
-    <img :src="CartSVG" class="cart-img">
+  <img @click="showingCart" :src="CartSVG" class="cart-img" />
+
+  <v-card v-if="showCart" title="Cart" class="cart-card">
+    <d-flex class="flex-colmun">
+      <v-divider :thickness="2" class="my-2"></v-divider>
+      <p class="main-body">Your cart is empty</p>
+    </d-flex>
+  </v-card>
 </template>
 <script setup lang="ts">
-import CartSVG from "@/assets/icon-cart.svg"
+import CartSVG from "@/assets/icon-cart.svg";
+import { ref } from "vue";
+
+let showCart = ref<boolean>(false);
+
+function showingCart() {
+  showCart.value = !showCart.value;
+  console.log(showCart);
+}
 </script>
 <style scoped lang="scss">
 .cart-img {
   cursor: pointer;
+}
+.cart-card {
+  position: absolute;
+  left: 68%;
+  top: 13%;
+  width: 400px;
+  height: 300px;
+  background-color: $White;
+}
+.main-body {
+  color: $Dark-grayish-blue;
+  font-weight: bold;
+  margin: 25% 30%;
 }
 </style>
