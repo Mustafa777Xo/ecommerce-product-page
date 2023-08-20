@@ -2,7 +2,7 @@
   <section>
     <div class="d-flex">
       <v-col cols="1" v-if="mdAndDown" class="py-5 mx-2">
-        <MobileNav/>
+        <MobileNav />
       </v-col>
       <v-col cols="2" class="pa-0">
         <p class="logo">sneakers</p>
@@ -14,11 +14,11 @@
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex py-1">
-        <v-col >
+        <v-col>
           <Cart />
         </v-col>
         <v-col class="pa-0">
-          <Avatar/>
+          <Avatar />
         </v-col>
       </div>
     </div>
@@ -35,5 +35,4 @@ import MobileNav from "./MobileNav.vue";
 import { useDisplay } from "vuetify";
 const { mdAndDown, mdAndUp } = useDisplay();
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

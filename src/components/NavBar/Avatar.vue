@@ -1,5 +1,5 @@
 <template>
-  <img class="avatar" src="../../assets/image-avatar.png" alt="" />
+  <img class="avatar"  src="../../assets/image-avatar.png" alt="" />
 </template>
 <script lang="ts" setup></script>
 <style scoped lang="scss">
@@ -10,6 +10,7 @@
   width: 3rem;
   @media only screen and (max-width: 900px) {
   width: 2rem;
+  margin-top: .5rem;
     
   }
 }

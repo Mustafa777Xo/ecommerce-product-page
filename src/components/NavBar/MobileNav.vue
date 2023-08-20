@@ -1,5 +1,5 @@
 <template>
-  <img @click="showingSideMenu" style="cursor: pointer" :src="IconMenu" />
+  <img  @click="showingSideMenu" style="cursor: pointer" :src="IconMenu" />
   <v-overlay v-model="showSideMenu">
     <v-container class="nav-container">
       <v-col>
