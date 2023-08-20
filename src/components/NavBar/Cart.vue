@@ -1,11 +1,8 @@
 <template>
   <img @click="showingCart" :src="CartSVG" class="cart-img" />
-
   <v-card v-if="showCart" title="Cart" class="cart-card">
-    <d-flex class="flex-colmun">
       <v-divider :thickness="2" class="my-2"></v-divider>
       <p class="main-body">Your cart is empty</p>
-    </d-flex>
   </v-card>
 </template>
 <script setup lang="ts">

@@ -8,5 +8,9 @@
   border: 2px solid $Orange;
   border-radius: 5rem;
   width: 3rem;
+  @media only screen and (max-width: 900px) {
+  width: 2rem;
+    
+  }
 }
 </style>
