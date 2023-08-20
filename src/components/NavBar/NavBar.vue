@@ -10,7 +10,7 @@
     </div>
     <v-spacer></v-spacer>
     <div class="d-flex py-1">
-      <v-col>
+      <v-col class="mx-5">
         <Cart />
       </v-col>
       <v-col class="pa-0">
