@@ -25,11 +25,24 @@
       <v-carousel hide-delimiters>
         <v-carousel-item
           v-for="productImage in productImages"
-          :src="productImage.img"
+          :src="productImages[selectedId].img"
           class="cur"
         ></v-carousel-item>
       </v-carousel>
     </v-container>
+    <div class="d-flex overlay-thumb">
+      <div v-for="productImg in productImages" class="thumb-container">
+        <img
+          :src="productImg.thumbnail"
+          alt=""
+          :class="{
+            'selected-thumb': isSelectedThumb && selectedId === productImg.id,
+          }"
+          class="product-thumbnail my-5 mr-4"
+          @click="selectedImgId(productImg.id)"
+        />
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -81,7 +94,12 @@ const selectedImgId = (id: number) => {
 .overlay-container {
   position: absolute;
   top: 15%;
-  left: 40%;
+  left: 35%;
   width: 33%;
+}
+.overlay-thumb {
+  position: absolute;
+  top: 75%;
+  left: 40%;
 }
 </style>
