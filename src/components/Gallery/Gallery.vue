@@ -1,5 +1,5 @@
 <template>
-  <v-col>
+  <v-col v-if="mdAndUp">
     <img
       :src="productImages[selectedId].img"
       alt=""
@@ -20,10 +20,11 @@
       </div>
     </div>
   </v-col>
+
   <div
     class="overlay"
     :class="{ 'hide-overlay': hideOverlay }"
-    v-if="showOverlay"
+    v-if="showOverlay && mdAndUp"
   >
     <v-col>
       <img class="close-icon" @click="hidingOverlay" :src="CloseIcon" alt="" />
@@ -62,6 +63,16 @@
       </v-container>
     </v-col>
   </div>
+
+  <div class="mobile-carousel">
+    <v-carousel v-if="mdAndDown" height="20rem" hide-delimiters>
+      <v-carousel-item
+        v-for="productImage in productImages"
+        :src="productImage.img"
+        cover
+      ></v-carousel-item>
+    </v-carousel>
+  </div>
 </template>
 <script lang="ts" setup>
 import { Carousel, Slide } from "vue3-carousel";
@@ -70,6 +81,8 @@ import "vue3-carousel/dist/carousel.css";
 import { productImages } from "@/TypesAndData/Data";
 import { ref } from "vue";
 import CloseIcon from "@/assets/icon-close.svg";
+import { useDisplay } from "vuetify";
+const { mdAndDown, mdAndUp } = useDisplay();
 
 let selectedId = ref<number>(0);
 let showOverlay = ref<boolean>(false);
@@ -94,6 +107,7 @@ const selectedImgId = (id: number) => {
 .product-img {
   width: 450px;
   border-radius: 1rem;
+  cursor: pointer;
 }
 .product-thumbnail {
   width: 100px;
@@ -123,7 +137,7 @@ const selectedImgId = (id: number) => {
   display: none; /* Hidden by default */
 }
 .close-icon {
-margin-left: 73%;
+  margin-left: 73%;
   width: 1rem;
 }
 .overlay-container {

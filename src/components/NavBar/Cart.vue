@@ -27,6 +27,7 @@ function showingCart() {
   width: 400px;
   height: 300px;
   background-color: $White;
+  z-index: 3;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   @media only screen and (max-width: 768px) {
