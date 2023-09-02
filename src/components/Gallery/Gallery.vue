@@ -1,4 +1,6 @@
 <template>
+  <v-container class="pa-0">
+
   <v-col v-if="mdAndUp">
     <img
       :src="productImages[selectedId].img"
@@ -6,11 +8,10 @@
       class="product-img"
       @click="showingOverlay"
     />
-    <div class="d-flex">
-      <div v-for="productImg in productImages" class="thumb-container">
+    <div class="d-flex pa-0">
+      <div v-for="productImg in productImages" :key="productImg.id" class="thumb-container">
         <img
           :src="productImg.thumbnail"
-          alt=""
           :class="{
             'selected-thumb': isSelectedThumb && selectedId === productImg.id,
           }"
@@ -73,6 +74,8 @@
       ></v-carousel-item>
     </v-carousel>
   </div>
+</v-container>
+
 </template>
 <script lang="ts" setup>
 import { Carousel, Slide } from "vue3-carousel";
@@ -104,6 +107,9 @@ const selectedImgId = (id: number) => {
 };
 </script>
 <style scoped lang="scss">
+* {
+  border: 1px solid red;
+}
 .product-img {
   width: 450px;
   border-radius: 1rem;
