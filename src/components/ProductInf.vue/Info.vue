@@ -14,9 +14,12 @@
       </div>
     </div>
     <p class="main-body discount">250$</p>
+    <Button text="Add to cart" />
   </div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Button from "../Ui/Button.vue";
+</script>
 <style scoped lang="scss">
 .main-col {
   margin: 20% 0%;
