@@ -8,7 +8,7 @@
           fill-rule="nonzero"
         />
       </svg>
-      <p class="ml-2">{{ text }}</p>
+      <p class="ml-2 main-body">{{ text }}</p>
     </div>
   </button>
 </template>
@@ -24,4 +24,5 @@ button {
   padding: 1rem;
   border-radius: 0.5rem;
 }
+
 </style>

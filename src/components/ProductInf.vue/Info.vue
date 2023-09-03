@@ -14,11 +14,19 @@
       </div>
     </div>
     <p class="main-body discount">250$</p>
-    <Button text="Add to cart" />
+    <div class="d-flex">
+      <v-col class="mr-5">
+        <IncrementButton />
+      </v-col>
+      <v-col cols="10">
+        <Button text="Add to cart" />
+      </v-col>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
 import Button from "../Ui/Button.vue";
+import IncrementButton from "../Ui/IncrementButton.vue";
 </script>
 <style scoped lang="scss">
 .main-col {
