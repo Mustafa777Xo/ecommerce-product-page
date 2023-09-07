@@ -30,7 +30,7 @@ import IncrementButton from "../Ui/IncrementButton.vue";
 </script>
 <style scoped lang="scss">
 .main-col {
-  margin: 20% 0%;
+  margin: 10% 5%;
 }
 .small-title {
   color: $Orange;

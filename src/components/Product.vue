@@ -11,8 +11,6 @@ import { useDisplay } from "vuetify";
 const { mdAndDown, mdAndUp } = useDisplay();
 </script>
 <style lang="scss" scoped>
-* {
-  border: 1px solid red;
-}
+
 
 </style>

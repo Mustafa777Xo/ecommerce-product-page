@@ -107,9 +107,7 @@ const selectedImgId = (id: number) => {
 };
 </script>
 <style scoped lang="scss">
-* {
-  border: 1px solid red;
-}
+
 .product-img {
   width: 450px;
   border-radius: 1rem;

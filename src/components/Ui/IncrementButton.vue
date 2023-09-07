@@ -23,7 +23,7 @@ let conuter = ref<number>(0);
 </script>
 <style lang="scss" scoped>
 .container {
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   background-color: $Light-grayish-blue;
   border-radius: 0.5rem;
 }
