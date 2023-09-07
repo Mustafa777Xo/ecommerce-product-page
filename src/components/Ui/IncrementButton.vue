@@ -1,10 +1,10 @@
 <template>
   <div class="d-flex container">
-    <div class="mr-10">
+    <div class="minus-icon">
       <img :src="MinusIcon" />
     </div>
 
-    <div class="counter mr-10">
+    <div class="counter">
       <p>
         {{ conuter }}
       </p>
@@ -26,5 +26,16 @@ let conuter = ref<number>(0);
   padding: 1rem 0.5rem;
   background-color: $Light-grayish-blue;
   border-radius: 0.5rem;
+  @media only screen and (min-width: 768px) {
+    width: 10rem;
+  }
+
+}
+.minus-icon{
+margin-right: 50%;
+}
+.counter{
+margin-right: 40%;
+
 }
 </style>

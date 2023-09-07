@@ -14,13 +14,9 @@
       </div>
     </div>
     <p class="main-body discount">250$</p>
-    <div class="d-flex">
-      <v-col class="mr-5">
-        <IncrementButton />
-      </v-col>
-      <v-col cols="10">
-        <Button text="Add to cart" />
-      </v-col>
+    <div class="d-flex btn-col">
+      <IncrementButton />
+      <Button text="Add to cart" />
     </div>
   </div>
 </template>
@@ -38,6 +34,13 @@ import IncrementButton from "../Ui/IncrementButton.vue";
 }
 .main-body {
   color: $Dark-grayish-blue;
+}
+.btn-col {
+  gap: 10rem;
+  @media only screen and (max-width: 390px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .badge {
   background-color: hsla(26, 100%, 55%, 0.315);
