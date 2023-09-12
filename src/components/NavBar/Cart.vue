@@ -2,13 +2,14 @@
   <img @click="showingCart" :src="CartSVG" class="cart-img" />
   <v-card v-if="showCart" title="Cart" class="cart-card">
     <v-divider :thickness="2" class="my-2"></v-divider>
-    <p class="main-body">Your cart is empty</p>
+    <!-- <p class="main-body">Your cart is empty</p> -->
+    <CartItem/>
   </v-card>
 </template>
 <script setup lang="ts">
 import CartSVG from "@/assets/icon-cart.svg";
 import { ref } from "vue";
-
+import CartItem from "./CartItem.vue";
 let showCart = ref<boolean>(false);
 
 function showingCart() {
