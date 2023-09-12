@@ -30,7 +30,6 @@ let conuter = ref<number>(0);
   gap: 3rem;
   padding: 1.2rem 0.7rem;
   width: 50%;
-  height: 80%;
   @media only screen and (max-width: 768px) {
     gap: 8rem;
     padding: 1.2rem 1rem;

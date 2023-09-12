@@ -36,7 +36,7 @@ import IncrementButton from "../Ui/IncrementButton.vue";
   color: $Dark-grayish-blue;
 }
 .btn-col {
-  gap: 5rem;
+  gap: 2rem;
   @media only screen and (max-width: 390px) {
     display: flex;
     flex-direction: column;

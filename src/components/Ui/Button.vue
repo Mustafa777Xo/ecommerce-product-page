@@ -21,9 +21,14 @@ const props = defineProps<{
 button {
   background-color: $Orange;
   color: $White;
-  padding: 1rem;
+  padding: 1rem 1.9rem;
+  width: 80%;
   border-radius: 0.5rem;
-
+  @media only screen and (max-width: 768px) {
+    padding: 1rem 6rem;
+  }
+  @media only screen and (max-width: 390px) {
+    width: 100%;
+  }
 }
-
 </style>
