@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="minus-icon">
+    <div class="icon" @click="decrement">
       <img :src="MinusIcon" />
     </div>
 
@@ -9,7 +9,7 @@
         {{ conuter }}
       </p>
     </div>
-    <div>
+    <div class="icon" @click="increment">
       <img :src="PlusIcon" alt="" srcset="" />
     </div>
   </div>
@@ -20,6 +20,17 @@ import MinusIcon from "@/assets/icon-minus.svg";
 import { ref } from "vue";
 
 let conuter = ref<number>(0);
+
+function increment(): number {
+  return conuter.value++;
+}
+function decrement(): number {
+  if (conuter.value === 0) {
+    return conuter.value;
+  } else {
+    return conuter.value--;
+  }
+}
 </script>
 <style lang="scss" scoped>
 .container {
@@ -38,5 +49,8 @@ let conuter = ref<number>(0);
     gap: 8rem;
     width: 100%;
   }
+}
+.icon {
+  cursor: pointer;
 }
 </style>
