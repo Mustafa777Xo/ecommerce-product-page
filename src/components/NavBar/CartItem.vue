@@ -19,13 +19,19 @@
           <img src="../../assets/icon-delete.svg" alt="" />
         </div>
       </div>
+      <button>Checkout</button>
     </div>
   </div>
 </template>
 <script lang="ts" setup></script>
 <style scoped lang="scss">
 .container {
-  padding: 1rem;
+  padding: 2rem 1rem;
+}
+.main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .item-row {
   display: flex;
@@ -38,5 +44,11 @@
 span {
   color: black;
   font-weight: bold;
+}
+button {
+  background-color: $Orange;
+  color: $White;
+  padding: 1rem 1.9rem;
+  border-radius: 0.5rem;
 }
 </style>

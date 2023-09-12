@@ -2,8 +2,8 @@
   <img @click="showingCart" :src="CartSVG" class="cart-img" />
   <v-card v-if="showCart" title="Cart" class="cart-card">
     <v-divider :thickness="2" class="my-2"></v-divider>
-    <!-- <p class="main-body">Your cart is empty</p> -->
-    <CartItem/>
+    <p class="main-body">Your cart is empty</p>
+    <!-- <CartItem /> -->
   </v-card>
 </template>
 <script setup lang="ts">
@@ -35,13 +35,11 @@ function showingCart() {
     left: 55%;
     top: 8%;
     width: 300px;
-    height: 200px;
   }
   @media only screen and (max-width: 390px) {
     left: 8%;
     top: 10%;
     width: 330px;
-    height: 200px;
   }
 }
 .main-body {
