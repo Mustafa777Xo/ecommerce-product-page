@@ -5,14 +5,16 @@
         <div class="producta-img">
           <img
             src="../../assets/product/image-product-1-thumbnail.jpg"
-            width="70px"
+            width="100px"
             style="border-radius: 0.5rem"
-            alt=""
+            alt="cant showup"
           />
         </div>
         <div>
           <p class="main-body">
-            Fall Limited Edition Sneakers $125.00 x3 <span>$375.00</span>
+            {{ store.getCartItem?.itemName }}
+            {{ store.getCartItem?.itemQuantity }}X
+            <span>${{ store.getCartItem?.itemPrice }}</span>
           </p>
         </div>
         <div>
@@ -23,7 +25,22 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useAppStore } from "@/store/app";
+import { itemInfo } from "@/TypesAndData/Data";
+import { onMounted } from "vue";
+
+const store = useAppStore();
+
+const cartInfo = <itemInfo>{
+  itemName: " Fall Limited Edition Sneakers $125.00",
+  itemQuantity: 3,
+  itemPrice: 375.0,
+};
+onMounted(() => {
+  store.setCartItem(cartInfo);
+});
+</script>
 <style scoped lang="scss">
 .container {
   padding: 2rem 1rem;

@@ -34,3 +34,8 @@ export const productImages = [
     thumbnail: thumb4,
   },
 ];
+export interface itemInfo {
+  itemName: string;
+  itemQuantity: number;
+  itemPrice: number;
+}
