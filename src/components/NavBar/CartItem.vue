@@ -2,10 +2,10 @@
   <div class="container">
     <div class="main-col">
       <div class="item-row">
-        <div class="producta-img">
+        <div>
           <img
-            src="../../assets/product/image-product-1-thumbnail.jpg"
-            width="100px"
+            :src="store.cartItem?.img"
+            width="80"
             style="border-radius: 0.5rem"
             alt="cant showup"
           />
@@ -29,6 +29,7 @@
 import { useAppStore } from "@/store/app";
 import { itemInfo } from "@/TypesAndData/Data";
 import { onMounted } from "vue";
+import img from "@/assets/product/image-product-1-thumbnail.jpg";
 
 const store = useAppStore();
 
@@ -36,6 +37,7 @@ const cartInfo = <itemInfo>{
   itemName: " Fall Limited Edition Sneakers $125.00",
   itemQuantity: 3,
   itemPrice: 375.0,
+  img: img,
 };
 onMounted(() => {
   store.setCartItem(cartInfo);

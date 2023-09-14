@@ -38,4 +38,5 @@ export interface itemInfo {
   itemName: string;
   itemQuantity: number;
   itemPrice: number;
+  img:string
 }
