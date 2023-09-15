@@ -3,7 +3,11 @@
   <v-card v-if="showCart" title="Cart" class="cart-card">
     <v-divider :thickness="2" class="my-2"></v-divider>
     <p
-      v-if="item?.itemQuantity == 0 || item?.itemQuantity == undefined"
+      v-if="
+        item?.itemQuantity == 0 ||
+        item?.itemQuantity == undefined ||
+        item?.itemQuantity == null
+      "
       class="main-body"
     >
       Your cart is empty

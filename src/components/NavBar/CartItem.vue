@@ -17,7 +17,7 @@
             <span>${{ store.getCartItem?.itemPrice }}</span>
           </p>
         </div>
-        <div>
+        <div @click="deleteItem" class="delete-img">
           <img src="../../assets/icon-delete.svg" alt="" />
         </div>
       </div>
@@ -28,6 +28,10 @@
 <script lang="ts" setup>
 import { useAppStore } from "@/store/app";
 const store = useAppStore();
+const deleteItem = () => {
+  store.resetCartItem();
+  console.log(store.getCartItem);
+};
 </script>
 <style scoped lang="scss">
 .container {
@@ -55,5 +59,8 @@ button {
   color: $White;
   padding: 1rem 1.9rem;
   border-radius: 0.5rem;
+}
+.delete-img {
+  cursor: pointer;
 }
 </style>
