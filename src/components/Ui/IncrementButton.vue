@@ -6,7 +6,7 @@
 
     <div class="counter">
       <p>
-        {{ conuter }}
+        {{ quantity }}
       </p>
     </div>
     <div class="icon" @click="increment">
@@ -18,17 +18,21 @@
 import PlusIcon from "@/assets/icon-plus.svg";
 import MinusIcon from "@/assets/icon-minus.svg";
 import { ref } from "vue";
+import { useAppStore } from "@/store/app";
+const store = useAppStore();
 
-let conuter = ref<number>(0);
+let quantity = ref<number>(0);
 
-function increment(): number {
-  return conuter.value++;
+function increment() {
+  quantity.value++;
+  store.setQuatity(quantity.value);
 }
-function decrement(): number {
-  if (conuter.value === 0) {
-    return conuter.value;
+function decrement() {
+  if (quantity.value === 0) {
+    store.setQuatity(quantity.value);
   } else {
-    return conuter.value--;
+    quantity.value--;
+    store.setQuatity(quantity.value);
   }
 }
 </script>

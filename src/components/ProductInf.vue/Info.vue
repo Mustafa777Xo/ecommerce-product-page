@@ -16,13 +16,36 @@
     <p class="main-body discount">250$</p>
     <div class="d-flex btn-col">
       <IncrementButton />
-      <Button text="Add to cart" />
+      <Button @click="setItem" text="Add to cart" />
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import Button from "../Ui/Button.vue";
+import { itemInfo } from "@/TypesAndData/Data";
 import IncrementButton from "../Ui/IncrementButton.vue";
+import { computed, inject, ref } from "vue";
+import img from "@/assets/product/image-product-1-thumbnail.jpg";
+import { useAppStore } from "@/store/app";
+
+const store = useAppStore();
+
+const quantity = computed(() => store.getQuatity);
+
+const cartInfo = computed(
+  () =>
+    <itemInfo>{
+      itemName: " Fall Limited Edition Sneakers $125.00",
+      itemQuantity: quantity.value,
+      itemPrice: 125 * quantity.value,
+      img: img,
+    }
+);
+
+const setItem = () => {
+  store.setCartItem(cartInfo.value);
+  console.log(quantity);
+};
 </script>
 <style scoped lang="scss">
 .main-col {
