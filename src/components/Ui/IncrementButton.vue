@@ -17,7 +17,7 @@
 <script lang="ts" setup>
 import PlusIcon from "@/assets/icon-plus.svg";
 import MinusIcon from "@/assets/icon-minus.svg";
-import { ref } from "vue";
+import { provide, ref } from "vue";
 import { useAppStore } from "@/store/app";
 const store = useAppStore();
 
@@ -28,9 +28,7 @@ function increment() {
   store.setQuatity(quantity.value);
 }
 function decrement() {
-  if (quantity.value === 0) {
-    store.setQuatity(quantity.value);
-  } else {
+  if (quantity.value > 0) {
     quantity.value--;
     store.setQuatity(quantity.value);
   }

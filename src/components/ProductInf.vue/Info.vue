@@ -30,7 +30,7 @@ import { useAppStore } from "@/store/app";
 
 const store = useAppStore();
 
-const quantity = computed(() => store.getQuatity);
+let quantity = computed(() => store.getQuatity);
 
 const cartInfo = computed(
   () =>
@@ -45,6 +45,7 @@ const cartInfo = computed(
 const setItem = () => {
   store.setCartItem(cartInfo.value);
   console.log(quantity);
+  store.setQuatity(0);
 };
 </script>
 <style scoped lang="scss">

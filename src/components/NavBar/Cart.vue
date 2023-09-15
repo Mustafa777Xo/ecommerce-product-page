@@ -2,22 +2,36 @@
   <img @click="showingCart" :src="CartSVG" class="cart-img" />
   <v-card v-if="showCart" title="Cart" class="cart-card">
     <v-divider :thickness="2" class="my-2"></v-divider>
-    <!-- <p class="main-body">Your cart is empty</p> -->
-    <CartItem />
+    <p v-if="item?.itemQuantity == 0" class="main-body">Your cart is empty</p>
+    <CartItem v-else />
   </v-card>
+  <v-badge v-if="item?.itemQuantity > 0" class="badge" color="#ff7d1a" dot>
+  </v-badge>
 </template>
 <script setup lang="ts">
 import CartSVG from "@/assets/icon-cart.svg";
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { itemInfo } from "@/TypesAndData/Data";
+
 import CartItem from "./CartItem.vue";
 let showCart = ref<boolean>(false);
 
+import { useAppStore } from "@/store/app";
+
+const store = useAppStore();
+
+const item = computed(() => store.getCartItem);
+
 function showingCart() {
   showCart.value = !showCart.value;
+  console.log("Cart item:", item.value);
   console.log(showCart);
 }
 </script>
 <style scoped lang="scss">
+.badge {
+  margin-bottom: 1.2rem;
+}
 .cart-img {
   cursor: pointer;
 }
