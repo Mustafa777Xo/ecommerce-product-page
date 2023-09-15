@@ -44,7 +44,6 @@ const cartInfo = computed(
 
 const setItem = () => {
   store.setCartItem(cartInfo.value);
-  console.log(quantity);
   store.setQuatity(0);
 };
 </script>

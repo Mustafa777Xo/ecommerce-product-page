@@ -30,7 +30,6 @@ import { useAppStore } from "@/store/app";
 const store = useAppStore();
 const deleteItem = () => {
   store.resetCartItem();
-  console.log(store.getCartItem);
 };
 </script>
 <style scoped lang="scss">

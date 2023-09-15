@@ -32,8 +32,6 @@ const item = computed(() => store.getCartItem);
 
 function showingCart() {
   showCart.value = !showCart.value;
-  console.log("Cart item:", item.value?.itemQuantity);
-  console.log(showCart);
 }
 </script>
 <style scoped lang="scss">
