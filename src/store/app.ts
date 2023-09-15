@@ -23,11 +23,11 @@ export const useAppStore = defineStore("app", {
       this.quantity = quan;
     },
     resetCartItem() {
-      this.cartItem = <itemInfo>{
-        itemName: null,
-        itemQuantity: null,
-        itemPrice: null,
-        img: null,
+      this.cartItem = {
+        itemName: "",
+        itemQuantity: 0,
+        itemPrice: 0,
+        img: "",
       };
     },
   },
