@@ -1,38 +1,59 @@
 <template>
-  <div class="spinner"></div>
+  <div class="container">
+    <div class="spinner"></div>
+  </div>
 </template>
 <style scoped lang="scss">
-spinner {
+.container {
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 4;
+  padding-left: 30%;
+  padding-top: 20rem;
+  @media only screen and (max-width: 768px) {
+    padding-left: 45%;
+  }
+  @media only screen and (max-width: 390px) {
+    padding-left: 40%;
+  }
+}
+.spinner {
   position: relative;
-  width: 22.4px;
-  height: 22.4px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .spinner::before,
 .spinner::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  display: block;
-  animation: spinner-b4c8mmmd 0.5s backwards,
-    spinner-49opz7md 1.25s 0.5s infinite ease;
-  border: 5.6px solid #ff7d1a;
+  border: 2.9px solid #ff7d1a;
   border-radius: 50%;
-  box-shadow: 0 -33.6px 0 -5.6px #ff7d1a;
   position: absolute;
+  content: "";
+  display: block;
+}
+
+.spinner::before {
+  width: 14.4px;
+  height: 14.4px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  animation: spinner-1o3y8q 0.75s infinite linear reverse;
 }
 
 .spinner::after {
-  animation-delay: 0s, 1.25s;
+  animation: spinner-1o3y8q 0.5s infinite linear;
+  height: 24px;
+  width: 24px;
+  border-right-color: transparent;
+  border-top-color: transparent;
 }
 
-@keyframes spinner-b4c8mmmd {
-  from {
-    box-shadow: 0 0 0 -5.6px #ff7d1a;
-  }
-}
-
-@keyframes spinner-49opz7md {
+@keyframes spinner-1o3y8q {
   to {
     transform: rotate(360deg);
   }
