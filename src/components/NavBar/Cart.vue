@@ -14,7 +14,7 @@
     </p>
     <CartItem v-else />
   </v-card>
-  <v-badge v-if="item?.itemQuantity > 0" class="badge" color="#ff7d1a" dot>
+  <v-badge v-if="item?.itemQuantity ?? 0 > 0" class="badge" color="#ff7d1a" dot>
   </v-badge>
 </template>
 <script setup lang="ts">

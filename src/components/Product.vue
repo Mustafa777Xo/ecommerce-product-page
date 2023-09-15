@@ -6,11 +6,8 @@
 </template>
 <script lang="ts" setup>
 import Gallery from "./Gallery/Gallery.vue";
-import Info from "./ProductInf.vue/Info.vue";
+import Info from "@/components/info/Info.vue";
 import { useDisplay } from "vuetify";
 const { mdAndDown, mdAndUp } = useDisplay();
 </script>
-<style lang="scss" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>
