@@ -39,20 +39,15 @@ function decrement() {
   background-color: $Light-grayish-blue;
   border-radius: 0.5rem;
   display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  padding: 1.2rem 0.7rem;
-  width: 50%;
-  @media only screen and (max-width: 768px) {
-    gap: 8rem;
-    padding: 1.2rem 1rem;
-  }
-  @media only screen and (max-width: 390px) {
-    gap: 8rem;
-    width: 100%;
-  }
+  align-items: center; /* Vertically center the content */
+  justify-content: space-between; /* Distribute space evenly between child elements */
+  width: 100%;
+  padding: 1rem;
 }
 .icon {
   cursor: pointer;
+}
+.counter {
+  text-align: center;
 }
 </style>

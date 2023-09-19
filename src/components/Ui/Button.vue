@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button class="icon-button">
     <div class="d-flex">
       <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -8,27 +8,26 @@
           fill-rule="nonzero"
         />
       </svg>
+
       <p class="ml-2 main-body">{{ text }}</p>
     </div>
   </button>
 </template>
 <script lang="ts" setup>
-const props = defineProps<{
+defineProps<{
   text: string;
 }>();
 </script>
 <style lang="scss" scoped>
-button {
+.icon-button {
   background-color: $Orange;
   color: $White;
-  padding: 1rem 1.9rem;
-  width: 80%;
   border-radius: 0.5rem;
-  @media only screen and (max-width: 768px) {
-    padding: 1rem 6rem;
-  }
-  @media only screen and (max-width: 390px) {
-    width: 100%;
-  }
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 </style>

@@ -8,6 +8,6 @@
 import Gallery from "./Gallery/Gallery.vue";
 import Info from "@/components/info/Info.vue";
 import { useDisplay } from "vuetify";
-const { mdAndDown, mdAndUp } = useDisplay();
+const { mdAndUp } = useDisplay();
 </script>
 <style lang="scss" scoped></style>

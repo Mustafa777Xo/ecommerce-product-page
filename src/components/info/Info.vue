@@ -24,7 +24,7 @@
 import Button from "../Ui/Button.vue";
 import { itemInfo } from "@/TypesAndData/Data";
 import IncrementButton from "../Ui/IncrementButton.vue";
-import { computed, inject, ref } from "vue";
+import { computed } from "vue";
 import img from "@/assets/product/image-product-1-thumbnail.jpg";
 import { useAppStore } from "@/store/app";
 
@@ -60,9 +60,10 @@ const setItem = () => {
 }
 .btn-col {
   gap: 2rem;
-  @media only screen and (max-width: 390px) {
+  @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    
   }
 }
 .badge {
