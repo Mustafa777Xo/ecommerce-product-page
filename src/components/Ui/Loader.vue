@@ -8,19 +8,13 @@
   background-color: white;
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: relative;
   z-index: 4;
-  padding-left: 30%;
-  padding-top: 20rem;
-  @media only screen and (max-width: 768px) {
-    padding-left: 45%;
-  }
-  @media only screen and (max-width: 390px) {
-    padding-left: 40%;
-  }
 }
 .spinner {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 24px;
   height: 24px;
   display: flex;

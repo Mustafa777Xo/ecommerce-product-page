@@ -1,7 +1,9 @@
 <template>
-  <Loader v-if="showLoader" />
-  <NavBar />
-  <router-view />
+  <Loader class="loader" v-if="showLoader" />
+  <div v-show="!showLoader">
+    <NavBar />
+    <router-view />
+  </div>
 </template>
 
 <script lang="ts" setup>
