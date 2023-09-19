@@ -17,7 +17,7 @@
 <script lang="ts" setup>
 import PlusIcon from "@/assets/icon-plus.svg";
 import MinusIcon from "@/assets/icon-minus.svg";
-import { provide, ref } from "vue";
+import {ref } from "vue";
 import { useAppStore } from "@/store/app";
 const store = useAppStore();
 
